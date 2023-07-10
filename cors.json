@@ -1,6 +1,7 @@
 [
   {
-    "origin": ["https://ohclips.vercel.app"],
+    "origin": ["*"],
+    "responseHeader": ["Content-Type"],
     "method": ["GET"],
     "maxAgeSeconds": 3600
   }
