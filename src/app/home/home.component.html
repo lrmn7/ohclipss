@@ -1,0 +1,39 @@
+<div class="hero min-h-screen">
+    <!-- overlay -->
+    <div class=" hero-overlay bg-opacity-60">
+        <video muted="muted" loop="loop" autoplay="autoplay" class="w-full h-full object-cover absolute z-0" #bgVideo>
+            <source src="assets/videos/hero.webm" type="video/webm">
+        </video>
+
+        <div class="bg-gradient absolute w-full h-full z-40 opacity-60"></div>
+
+        <div class="w-full h-full absolute z-40">
+            <div class="cube"></div>
+            <div class="cube"></div>
+            <div class="cube"></div>
+            <div class="cube"></div>
+            <div class="cube"></div>
+        </div>
+    </div>
+
+    <!-- content -->
+    <div class="hero-content text-center text-neutral-content z-50">
+        <div class="max-w-2lg text-white">
+            <h1 class="mb-5 text-5xl font-bold ">Share Your Moment to the World</h1>
+            <p class="mb-5">
+                Easily upload and share your game clips in seconds
+            </p>
+            <button class="btn btn-info" routerLink="/clips">
+                Get Started
+            </button>
+        </div>
+    </div>
+</div>
+
+<section class="container mx-auto">
+    <div class="divider text-4xl uppercase my-20 tracking-widest">
+        <p>Latest</p>
+    </div>
+
+    <app-video-list></app-video-list>
+</section>

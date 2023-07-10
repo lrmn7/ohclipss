@@ -1,0 +1,59 @@
+<nav class="navbar bg-slate-900 flex justify-between px-20">
+    <div>
+        <app-link href="/">
+            <h1
+                class="text-3xl font-extrabold font-handwritten text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+                OhCLiPS
+            </h1>
+        </app-link>
+        <app-link href="/clips" class="hidden ml-5 md:block">
+            Clips
+        </app-link>
+    </div>
+    <div class="hidden md:flex">
+        <app-link (click)="toggleAuthModal()" *ngIf="user === null">
+            Login
+        </app-link>
+
+        <app-link *ngIf="user !== null" href="/me">
+            {{ user.displayName ? user.displayName : user.email }}
+        </app-link>
+
+        <app-link [class.ml-5]="true" href="/about">
+            About
+        </app-link>
+    </div>
+
+    <div class="flex md:hidden">
+
+        <div class="dropdown">
+            <label tabindex="0" class="btn btn-ghost btn-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    class="inline-block w-5 h-5 stroke-current fill-current">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+
+            </label>
+            <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                <ul>
+                    <li>
+                        <app-link href="/clips" class="">
+                            Clips
+                        </app-link>
+                    </li>
+                    <li>
+                        <app-link *ngIf="user !== null" href="/me">
+                            Profile
+                        </app-link>
+                    </li>
+                    <li>
+                        <app-link href="/about">
+                            About
+                        </app-link>
+                    </li>
+                </ul>
+            </ul>
+        </div>
+    </div>
+</nav>

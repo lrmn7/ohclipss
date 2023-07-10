@@ -1,0 +1,25 @@
+<!-- Edit Modal -->
+<app-modal [id]="modalId">
+    <!-- Form -->
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+        <!-- Title -->
+        <app-input [field]="title" name="Title" placeholder="Title"></app-input>
+        <!-- Description -->
+        <app-input [field]="description" name="Description" placeholder="Description"></app-input>
+        <!-- Public -->
+        <label class="label mt-5">Public or not</label>
+        <input type="checkbox" class="toggle toggle-accent" [formControl]="public" checked />
+
+        <!-- Error -->
+        <app-alert *ngIf="error">
+            {{ error }}
+        </app-alert>
+
+        <div class="my-5 text-right">
+            <button [disabled]="inSubmission" [class.disabled]="inSubmission" [class.loading]="inSubmission"
+                class="btn btn-accent">
+                {{ submitButtonText }}
+            </button>
+        </div>
+    </form>
+</app-modal>

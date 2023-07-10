@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "oh-clips": {
+      "hosting": {
+        "oh-clips": [
+          "oh-clips"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "oh-clips"
+  }
+}
